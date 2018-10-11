@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:android_intent/android_intent.dart';
+import 'homePage.dart';
+import 'PageTwo.dart';
+import 'PageThree.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new HomePage(),
+      routes: <String, WidgetBuilder>{
+        "home": (BuildContext context) => HomePage(),
+        "page2": (BuildContext context) => PageTwo(),
+        "page3": (BuildContext context) => PageThree(),
+      },
     );
   }
 }
@@ -64,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void openActivity(){
+  void openActivity() {
     AndroidIntent intent = new AndroidIntent(
       action: 'android.intent.action.VIEW',
       data: 'damai://member_ticketwalletlist',
@@ -124,9 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50.0,
               minWidth: 50.0,
               child: new Text("这是一个MaterialButton"),
-              onPressed: () {
-
-              },
+              onPressed: () {},
             )
           ],
         ),
