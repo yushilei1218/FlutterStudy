@@ -28,7 +28,7 @@ class PageThree extends StatelessWidget {
       ),
       floatingActionButton: new FloatingActionButton(
           child: new Icon(Icons.add), onPressed: () {
-        Navigator.of(context).pushNamed("page3");
+        Navigator.of(context).pushNamed("page4");
       }),
     );
   }

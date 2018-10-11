@@ -4,6 +4,7 @@ import 'package:android_intent/android_intent.dart';
 import 'homePage.dart';
 import 'PageTwo.dart';
 import 'PageThree.dart';
+import 'package:flutterstudy/IntentPage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         "home": (BuildContext context) => HomePage(),
         "page2": (BuildContext context) => PageTwo(),
         "page3": (BuildContext context) => PageThree(),
+        "page4": (BuildContext context) => IntentPage("这是一个IntentPage"),
       },
     );
   }
