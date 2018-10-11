@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String url =
       "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539236908555&di=f1a54f3a34e06fb2c4ccb7862758cc11&imgtype=0&src=http%3A%2F%2Fimg2.touxiang.cn%2Ffile%2F20160420%2F4ec66a32636c11db32788d958b61da54.jpg";
+  bool isAdd = true;
 
   void _incrementCounter() {
     setState(() {
@@ -56,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void changeImage() {
     setState(() {
+      isAdd = !isAdd;
       url =
           "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539236983870&di=840005dc9380fae63f94ea72fab75913&imgtype=0&src=http%3A%2F%2Fp1.gexing.com%2Ftouxiang%2F20120810%2F1502%2F5024b21a40af6_200x200_3.jpg";
     });
@@ -98,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 new Image.asset(
                   "assets/my_pic2.gif",
-                  width: 100.0,
-                  height: 100.0,
+                  width: isAdd ? 50.0 : 100.0,
+                  height: isAdd ? 50.0 : 100.0,
                 ),
               ],
             ),
