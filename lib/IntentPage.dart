@@ -34,10 +34,10 @@ class TTextState extends State<TText> {
   String changeUri;
 
 
-  @override
-  void initState() {
-    getUri();
-  }
+//  @override
+//  void initState() {
+//    getUri();
+//  }
 
   change() {
     setState(() {
