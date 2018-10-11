@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:android_intent/android_intent.dart';
 
 void main() => runApp(new MyApp());
 
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Color(0xFFCDB5CD),
+      backgroundColor: Colors.lightGreen,
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -111,6 +112,18 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 200.0,
               alignment: Alignment.topRight,
             ),
+            new MaterialButton(
+              height: 50.0,
+              minWidth: 50.0,
+              child: new Text("这是一个MaterialButton"),
+              onPressed: () {
+                AndroidIntent intent = new AndroidIntent(
+                  action: 'action_view',
+                  data: 'damai://home',
+                );
+                intent.launch();
+              },
+            )
           ],
         ),
       ),
