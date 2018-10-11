@@ -64,6 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void openActivity(){
+    AndroidIntent intent = new AndroidIntent(
+      action: 'android.intent.action.VIEW',
+      data: 'damai://member_ticketwalletlist',
+    );
+    intent.launch();
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -92,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 new Text(
                   WordPair.random().asUpperCase,
-                  style: TextStyle(color: Color(0xFFFF4040)),
+                  style: TextStyle(color: Colors.red),
                 ),
                 new Image.asset(
                   'assets/my_pic1.png',
@@ -117,11 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
               minWidth: 50.0,
               child: new Text("这是一个MaterialButton"),
               onPressed: () {
-                AndroidIntent intent = new AndroidIntent(
-                  action: 'action_view',
-                  data: 'damai://home',
-                );
-                intent.launch();
+
               },
             )
           ],
@@ -131,6 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           changeImage();
           _incrementCounter();
+          openActivity();
         },
         tooltip: WordPair.random().asUpperCase,
         child: new Icon(Icons.add),
