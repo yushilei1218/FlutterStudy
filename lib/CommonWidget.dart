@@ -13,12 +13,12 @@ abstract class CommonWidget extends StatelessWidget {
       appBar: AppBar(
         title: new Text(title),
       ),
-      body: getBody(),
+      body: getBody(context),
       floatingActionButton: getFab(),
     );
   }
 
-  getBody();
+  getBody(BuildContext context);
 
   getFab();
 }

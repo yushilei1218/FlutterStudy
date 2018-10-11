@@ -5,6 +5,8 @@ import 'homePage.dart';
 import 'PageTwo.dart';
 import 'PageThree.dart';
 import 'package:flutterstudy/IntentPage.dart';
+import 'CategoryPage.dart';
+import 'HttpPage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -18,10 +20,12 @@ class MyApp extends StatelessWidget {
       ),
       home: new HomePage(),
       routes: <String, WidgetBuilder>{
-        "home": (BuildContext context) => HomePage(),
+        "home": (BuildContext context) {return new HomePage();},
         "page2": (BuildContext context) => PageTwo(),
         "page3": (BuildContext context) => PageThree(),
         "page4": (BuildContext context) => IntentPage("这是一个IntentPage"),
+        "category": (BuildContext context) => CategoryPage("这是一个CategoryPage"),
+        "http": (BuildContext context) => HttpPage("这是一个CategoryPage"),
       },
     );
   }

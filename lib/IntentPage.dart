@@ -9,7 +9,7 @@ class IntentPage extends CommonWidget {
   IntentPage(String title) : super(title);
 
   @override
-  getBody() {
+  getBody(BuildContext c) {
     return new Center(
       child: TText(),
     );
