@@ -24,9 +24,11 @@ class HomePage extends StatelessWidget {
                   "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539236908555&di=f1a54f3a34e06fb2c4ccb7862758cc11&imgtype=0&src=http%3A%2F%2Fimg2.touxiang.cn%2Ffile%2F20160420%2F4ec66a32636c11db32788d958b61da54.jpg"),
             ),
             new Text(""),
-            new RaisedButton(onPressed: () {
-              Navigator.of(context).pushNamed("category");
-            })
+            new RaisedButton(
+                child: Text("跳转到Category"),
+                onPressed: () {
+                  Navigator.of(context).pushNamed("category");
+                })
           ],
         ),
       ),

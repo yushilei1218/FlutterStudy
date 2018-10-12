@@ -19,7 +19,10 @@ class CategoryPage extends CommonWidget {
         }, "Http Request Page"),
         getRaiseBtn(() {
           Navigator.of(context).pushNamed("isolate");
-        }, "Isolate Page")
+        }, "Isolate Page"),
+        getRaiseBtn(() {
+          Navigator.of(context).pushNamed("listview");
+        }, "ListView Test")
       ],
     );
   }

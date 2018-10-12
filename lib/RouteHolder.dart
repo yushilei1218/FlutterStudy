@@ -5,9 +5,9 @@ import 'PageThree.dart';
 import 'package:flutterstudy/IntentPage.dart';
 import 'CategoryPage.dart';
 import 'HttpPage.dart';
+import 'ListViewPage.dart';
 
 class RouteHolder {
-
   static Map<String, WidgetBuilder> getRoute() {
     return <String, WidgetBuilder>{
       "home": (BuildContext context) {
@@ -18,6 +18,7 @@ class RouteHolder {
       "page4": (BuildContext context) => IntentPage("这是一个IntentPage"),
       "category": (BuildContext context) => CategoryPage("这是一个CategoryPage"),
       "http": (BuildContext context) => HttpPage("这是一个CategoryPage"),
+      "listview": (BuildContext context) => ListViewPage("这是一个ListViewPage"),
     };
   }
 }
