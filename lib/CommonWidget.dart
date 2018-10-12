@@ -14,11 +14,11 @@ abstract class CommonWidget extends StatelessWidget {
         title: new Text(title),
       ),
       body: getBody(context),
-      floatingActionButton: getFab(),
+      floatingActionButton: getFab(context),
     );
   }
 
   getBody(BuildContext context);
 
-  getFab();
+  getFab(BuildContext context);
 }

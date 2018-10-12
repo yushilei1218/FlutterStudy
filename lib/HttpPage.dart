@@ -15,7 +15,7 @@ class HttpPage extends CommonWidget {
   getBody(BuildContext context) => new ImageView();
 
   @override
-  getFab() {
+  getFab(BuildContext context) {
     return null;
   }
 }

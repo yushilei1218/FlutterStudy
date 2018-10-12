@@ -11,7 +11,7 @@ class ListViewPage extends CommonWidget {
   }
 
   @override
-  getFab() {}
+  getFab(BuildContext context) {}
 }
 
 class AddListView extends StatefulWidget {

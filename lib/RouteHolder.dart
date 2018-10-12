@@ -6,6 +6,7 @@ import 'package:flutterstudy/IntentPage.dart';
 import 'CategoryPage.dart';
 import 'HttpPage.dart';
 import 'ListViewPage.dart';
+import 'BatteryPluginPage.dart';
 
 class RouteHolder {
   static Map<String, WidgetBuilder> getRoute() {
@@ -19,6 +20,7 @@ class RouteHolder {
       "category": (BuildContext context) => CategoryPage("这是一个CategoryPage"),
       "http": (BuildContext context) => HttpPage("这是一个CategoryPage"),
       "listview": (BuildContext context) => ListViewPage("这是一个ListViewPage"),
+      "battery": (BuildContext context) => BatteryPlugin("这是一个电量监听"),
     };
   }
 }

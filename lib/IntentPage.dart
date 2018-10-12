@@ -16,7 +16,7 @@ class IntentPage extends CommonWidget {
   }
 
   @override
-  getFab() {
+  getFab(BuildContext context) {
     return new FloatingActionButton(
         child: Image.asset("assets/my_pic1.png"), onPressed: () {});
   }

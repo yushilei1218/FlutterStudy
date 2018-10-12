@@ -22,13 +22,16 @@ class CategoryPage extends CommonWidget {
         }, "Isolate Page"),
         getRaiseBtn(() {
           Navigator.of(context).pushNamed("listview");
-        }, "ListView Test")
+        }, "ListView Test"),
+        getRaiseBtn(() {
+          Navigator.of(context).pushNamed("battery");
+        }, "Battery Test")
       ],
     );
   }
 
   @override
-  getFab() {
+  getFab(BuildContext context) {
     return null;
   }
 
