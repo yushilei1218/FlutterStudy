@@ -7,45 +7,59 @@ class ListViewPage extends CommonWidget {
 
   @override
   getBody(BuildContext context) {
-    List<String> data = ["你好", "他好", "丫丫", "呵呵"];
-    for (var i = 0; i < 50; ++i) {
-      data.add("第" + i.toString() + "条");
-    }
-    return ListView.builder(
-        shrinkWrap: true,
-        itemCount: data.length,
-        itemBuilder: (BuildContext context, int index) {
-          String name = '第' + data[index] + "条";
-          return new GestureDetector(
-            child: Padding(
-              padding: EdgeInsets.all(20.0),
-              child: new Text(name),
-            ),
-            onTap: () {},
-          );
-        });
+    return new AddListView();
   }
 
   @override
   getFab() {}
 }
 
-class TText extends StatefulWidget {
-  String name;
-
+class AddListView extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => TTextState(name);
-
-  TText(this.name);
+  State<StatefulWidget> createState() {
+    return new AddListViewState();
+  }
 }
 
-class TTextState extends State<TText> {
-  String name;
+class AddListViewState extends State<AddListView> {
+  List<String> data = [];
+
+  @override
+  void initState() {
+    data.add("你好");
+    data.add("哈哈");
+    data.add("呵呵");
+    data.add("丫丫");
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return new Text(name);
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          String name = '第' + data[index] + "条";
+          return getRowByName(name);
+        });
   }
 
-  TTextState(this.name);
+  getRowByName(String name) {
+    return new GestureDetector(
+      child: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: new Text(name),
+      ),
+      onTap: () {
+        setState(() {
+          data.add("haha");
+        });
+      },
+    );
+  }
+
+  getRow(int index) {
+    String name = '第' + index.toString() + "条";
+    return getRowByName(name);
+  }
 }
